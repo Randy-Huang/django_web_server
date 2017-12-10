@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
 APP_NAME = {
     'blog': 'blog',
     'homepage': 'homepage',
+    'login': 'login',
 }
 
 # Application definition
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     # my app
     APP_NAME['homepage'],
     APP_NAME['blog'],
+    APP_NAME['login'],
 ]
 
 MIDDLEWARE = [
@@ -137,6 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
     (APP_NAME['homepage'], os.path.join(BASE_DIR, APP_NAME['homepage'], 'app_static/')),
     (APP_NAME['blog'], os.path.join(BASE_DIR, APP_NAME['blog'], 'app_static/')),
+    (APP_NAME['login'], os.path.join(BASE_DIR, APP_NAME['login'], 'app_static/')),
 ]
 
 # Static files for admin upload management

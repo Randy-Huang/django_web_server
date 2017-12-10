@@ -79,16 +79,8 @@
                             <li>
                                 <span class="fa-gears {% block menu_services %}{% endblock %}">Services</span>
                                 <ul>
-                                    <li class="parent">
-                                        <span>Accounts</span>
-                                        <ul>
-                                            <li>
-                                                <a href="features-typo-basic.html">Administrator</a>
-                                            </li>
-                                            <li>
-                                                <a href="features-typo-blockquotes.html">Vistor</a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <a href="{% url 'login:login-account' %}">Login Account</a>
                                     </li>
                                     <li class="parent">
                                         <span>Components</span>
