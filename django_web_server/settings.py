@@ -14,7 +14,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -25,17 +24,15 @@ SECRET_KEY = '357msb7zsh-lj3hsds52gs5@xr05n+zp4lx-xdfa!0^$@@_u+b'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.kaihunghuang.info',	# Allow domain and subdomains
+    '.kaihunghuang.info',  # Allow domain and subdomains
 ]
 
 APP_NAME = {
-    'blog':'blog',
-    'homepage':'homepage',
+    'blog': 'blog',
+    'homepage': 'homepage',
 }
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
@@ -52,9 +49,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.linkedin',
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin',
     'allauth.socialaccount.providers.twitter',
 
     # my app
@@ -79,7 +77,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
-	],
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,10 +92,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_web_server.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -105,10 +101,8 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -124,10 +118,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Taipei'
@@ -138,119 +130,160 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES_DIRS  = [
-    (APP_NAME['homepage'], os.path.join(BASE_DIR, APP_NAME['homepage'], 'app_static/')),    
-    (APP_NAME['blog'], os.path.join(BASE_DIR, APP_NAME['blog'], 'app_static/')),    
+STATICFILES_DIRS = [
+    (APP_NAME['homepage'], os.path.join(BASE_DIR, APP_NAME['homepage'], 'app_static/')),
+    (APP_NAME['blog'], os.path.join(BASE_DIR, APP_NAME['blog'], 'app_static/')),
 ]
 
-
 # Static files for admin upload management
-#
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
 # django.contrib.sites
-#
+# https://django-allauth.readthedocs.io/en/latest/installation.html
 SITE_ID = 1
 
+# django.allauth
+# https://django-allauth.readthedocs.io/en/latest/providers.html
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'verified',
+            'locale',
+            'timezone',
+            'link',
+            'gender',
+            'updated_time',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v2.5',
+
+        'gitlab': {
+            'GITLAB_URL': 'https://your.gitlab.server.tld',
+            'SCOPE': ['read_user'],
+        },
+
+        'linkedin': {
+            'SCOPE': [
+                'r_emailaddress',
+            ],
+            'PROFILE_FIELDS': [
+                'id',
+                'first-name',
+                'last-name',
+                'email-address',
+                'picture-url',
+                'public-profile-url',
+            ]
+        }
+    }
+}
 
 # CKEditor setting
 # path = 'media/upload/'
-
-CKEDITOR_UPLOAD_PATH = 'upload/' 	
+CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
-
 
 # reCAPTCHA
 # https://pypi.python.org/pypi/django-recaptcha
-
 RECAPTCHA_PUBLIC_KEY = '6LdVXDsUAAAAAEP2ZoxcwmI8W7TWK-NJPsWzB6HU'
 RECAPTCHA_PRIVATE_KEY = '6LdVXDsUAAAAAMQ6cuaAXdLw1FRCbnovmKW3JPTz'
 NOCAPTCHA = True
 
-
 # Error notifications for managing
 # https://docs.djangoproject.com/en/1.11/ref/settings/#admins
-
 ADMINS = [
     ('Kai-Hung', 'randy.hunang@gmail.com'),
 ]
 
 MANAGERS = ADMINS
 
-
 # Logging setting
 # https://docs.djangoproject.com/en/1.11/topics/logging/
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
+    # formatters
     'formatters': {
-	'standard': {
-	    'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'
         },
-	'simple': {
+        'simple': {
             'format': '%(levelname)s %(message)s'
-	},
-    },  
+        },
+    },
+
+    # filters
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse',
         },
-    }, 
+    },
+
+    # handlers
     'handlers': {
-	'null': {
+        'null': {
             'level': 'DEBUG',
             'class': 'logging.NullHandler',
         },
-       	'debug': {
+        'debug': {
             'level': 'DEBUG',
-	    'class': 'logging.handlers.RotatingFileHandler',
-	    'filename': os.path.join(BASE_DIR, 'logs', 'debug.log'),
-	    'maxBytes': 1024*1024*5, # File size
-	    'backupCount': 5,
-	    'formatter': 'standard',
-	},
-	'console': {
-	    'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'debug.log'),
+            'maxBytes': 1024 * 1024 * 5,  # File size
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+        'console': {
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-	    'formatter': 'standard',
-	},
-	'mail_admins': {
-	    'level': 'ERROR',
-	    'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'standard',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
             'include_html': True,
-	    'filters': ['require_debug_false'],
-	},
+            'filters': ['require_debug_false'],
+        },
     },
+
+    # loggers
     'loggers': {
-	'django': {
-	    'handlers': ['console'],
+        'django': {
+            'handlers': ['console'],
             'level': 'DEBUG',
-	    'propagate': False,
-	},
-	'django.debug': {
+            'propagate': False,
+        },
+        'django.debug': {
             'handlers': ['debug'],
             'level': 'DEBUG',
             'propagate': True,
         },
-	'django.request': {
+        'django.request': {
             'handlers': ['debug', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
-	'django.security.DisallowedHost': {
+        'django.security.DisallowedHost': {
             'handlers': ['null'],
             'propagate': False,
         },
     },
 }
-
-
