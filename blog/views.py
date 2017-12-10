@@ -6,9 +6,6 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 
 # Create your views here.
-def showBlogList(request):
-    return render(request, 'blog/blog-list.html')
-
 class ArticleListView(ListView):
     context_object_name = "article_list" 
     model = Article
@@ -19,6 +16,7 @@ class ArticleListView(ListView):
         return super(ArticleListView, self).get_context_data(**kwargs)   
 
 class ArticleDetailView(DetailView):
+    model = Article
     template_name = ""
     pass
 

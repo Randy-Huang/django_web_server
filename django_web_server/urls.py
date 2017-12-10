@@ -24,11 +24,12 @@ from django_web_server.views import TemplateErrorView404
 
 import os
 
-# projecct site root
+# project site root
 urlpatterns = [
-#    url(r'^jet/', include('jet.urls', 'jet')), 
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
 ]
 
 # for ssl file from sslforfree.com
@@ -43,16 +44,16 @@ urlpatterns += [
     # Notice the expression does not end in $, 
     # that happens at the myapp/url.py level
     url(r'^', include('homepage.urls', namespace='homepage')),
-] 
+]
+
+# login app
+urlpatterns += [
+    url(r'^login/', include('login.urls', namespace='login')),
+]
 
 # blog app
 urlpatterns += [
     url(r'^blog/', include('blog.urls', namespace='blog')),
-]
-
-# ckeditor
-urlpatterns += [
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
