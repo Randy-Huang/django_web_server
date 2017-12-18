@@ -43,17 +43,17 @@ urlpatterns += [
 urlpatterns += [
     # Notice the expression does not end in $, 
     # that happens at the myapp/url.py level
-    url(r'^', include('homepage.urls', namespace='homepage')),
+    url(r'^', include('homepage.urls', namespace='homepage', app_name='homepage')),
 ]
 
 # login app
 urlpatterns += [
-    url(r'^login/', include('login.urls', namespace='login')),
+    url(r'^login/', include('login.urls', namespace='login', app_name='login')),
 ]
 
 # blog app
 urlpatterns += [
-    url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

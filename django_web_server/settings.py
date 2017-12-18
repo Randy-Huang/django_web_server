@@ -151,8 +151,29 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://django-allauth.readthedocs.io/en/latest/installation.html
 SITE_ID = 1
 
+# Email
+# https://docs.djangoproject.com/en/1.11/ref/settings/
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'randy.hunang@gmail.com'
+EMAIL_HOST_PASSWORD = 'ac22jimmy751'
+EMAIL_PORT = 25
+EMAIL_FROM = 'randy.hunang@gmail.com'
+EMAIL_PORT = 587
+
 # django.allauth
 # https://django-allauth.readthedocs.io/en/latest/providers.html
+AUTHENTICATION_BACKENDS = (
+    # django-allauth will not evffetc on django admin
+    'django.contrib.auth.backends.ModelBackend',
+            
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',

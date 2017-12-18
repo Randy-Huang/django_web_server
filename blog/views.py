@@ -17,8 +17,13 @@ class ArticleListView(ListView):
 
 class ArticleDetailView(DetailView):
     model = Article
-    template_name = ""
-    pass
+    template_name = "blog/blog-article.html"
+    pk_article = 'article_name'
+    context_object_name = 'context_article'
+    
+    def get_object(self):
+        obj = super(ArticleDetailView, self).get_object
+        return obj
 
 class CategoryView(ListView):
     model = Article
