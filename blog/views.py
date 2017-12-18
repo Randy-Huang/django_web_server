@@ -21,6 +21,10 @@ class ArticleDetailView(DetailView):
     pk_article = 'article_name'
     context_object_name = 'context_article'
     
+    def get_context_data(self, **kwargs):
+        kwargs['tag_list'] = Tag.objects.all().order_by('name')
+        return super(ArticleDetailView, self).get_context_data(**kwargs)   
+
     def get_object(self):
         obj = super(ArticleDetailView, self).get_object
         return obj
