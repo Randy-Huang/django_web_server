@@ -3,6 +3,10 @@
 {% load static %}
 
 <!-- === BEGIN HEADER === -->
+{% block import_css_file %}
+    <!-- CKEditor Plugins -->
+    <link rel="stylesheet" type="text/css" href="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism.css' %}">
+{% endblock %}
 <!-- Top Menu -->
 {% block menu_blog %} active {% endblock %}
 <!-- End Top Menu -->
@@ -324,3 +328,15 @@
 </div>
 {% endblock %}
 <!-- === END CONTENT === -->
+
+
+<!-- === BEGIN FOOTER === -->
+<!-- JS -->
+{% block import_js_file %}
+    <!-- CKEditor Config/Plugins -->
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+{% endblock %}
+<!-- End JS -->
+<!-- === END FOOTER === -->

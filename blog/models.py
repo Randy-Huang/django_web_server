@@ -5,9 +5,10 @@ from django.utils import timezone
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=50)
 
-    pass
+    def __str__(self):
+        return self.name
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
@@ -20,7 +21,7 @@ class Article(models.Model):
     title = models.CharField('title', max_length=100)
     
     # body of content
-    body = RichTextUploadingField(null=True, blank=True)
+    body = RichTextUploadingField(null=True, blank=True, config_name='default')
 
     # excerpt of content
     excerpt = models.CharField(max_length=200, blank=True)
@@ -49,5 +50,8 @@ class Article(models.Model):
     
     def __str__(self):
         return self.title
+
+    class Meta:
+        pass
 
 

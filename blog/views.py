@@ -5,11 +5,15 @@ from django.shortcuts import render
 from django.views.generic import ListView 
 from django.views.generic import DetailView
 
+# Global constant
+ITEMS_PER_PAGE = 10
+
 # Create your views here.
 class ArticleListView(ListView):
     context_object_name = "article_list" 
     model = Article
     template_name = "blog/blog-list.html"
+    paginate_by = ITEMS_PER_PAGE 
 
     def get_context_data(self, **kwargs):
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
