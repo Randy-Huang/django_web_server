@@ -226,14 +226,15 @@
                     <!-- End Blog Item Body -->
                 </div>
                 <!-- End Blog Item -->
+                {% for article in article_list %}
                 <!-- Blog Post -->
                 <div class="blog-post padding-bottom-20">
                     <!-- Blog Item Header -->
                     <div class="blog-item-header">
                         <!-- Title -->
                         <h2>
-                            <a href="#">
-                                And One More Sample Blog Title</a>
+                            <a href="{% url 'blog:article' article.pk%}">
+                                {{ article.title }}</a>
                         </h2>
                         <div class="clearfix"></div>
                         <!-- End Title -->
@@ -246,12 +247,6 @@
                     <!-- End Blog Item Header -->
                     <!-- Blog Item Details -->
                     <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
                         <!-- Tags -->
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
                             <i class="fa fa-tag color-gray-light"></i>
@@ -279,13 +274,9 @@
                                      alt="thumb4">
                             </div>
                             <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                                    eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                <p>{{article.body |safe}}</p>
                                 <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
+                                <a href="{% url 'blog:article' article.pk %}" class="btn btn-primary">
                                     Read More
                                     <i class="icon-chevron-right readmore-icon"></i>
                                 </a>
@@ -296,6 +287,7 @@
                     <!-- End Blog Item Body -->
                 </div>
                 <!-- End Blog Item -->
+                {% endfor %}
                 <!-- Pagination -->
                 <ul class="pagination">
                     <li>

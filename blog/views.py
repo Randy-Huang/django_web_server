@@ -17,6 +17,7 @@ class ArticleListView(ListView):
 
     def get_context_data(self, **kwargs):
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
+        kwargs['article_list'] = Article.objects.all()
         return super(ArticleListView, self).get_context_data(**kwargs)   
 
 class ArticleDetailView(DetailView):

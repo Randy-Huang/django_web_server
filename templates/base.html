@@ -187,15 +187,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <span class="fa-font {% block menu_blog %}{% endblock %}">Blog</span>
-                                <ul>
-                                    <li>
-                                        <a href="{% url 'blog:blog-list' %}">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-single.html">Blog Single Item</a>
-                                    </li>
-                                </ul>
+                                <a href="{% url 'blog:blog-list' %}"
+                                   class="fa-font {% block menu_blog %}{% endblock %}">Blog</a>
                             </li>
                             <li>
                                 <a href="contact.html" class="fa-comment ">Contact</a>
