@@ -2541,14 +2541,10 @@ ul.social-icons li a:hover {
 /* Blog */
 /*-----------------------------------------------------------------------------------*/
 .blog-post-date {
-  position: absolute;
   padding: 0px;
   text-align: left;
   font-weight: 400;
   font-size: 20px;
-  margin: 0 10px 0 0;
-  right: 0;
-  top: 0;
 }
 .blog-post-date a {
   color: #b3b3b3;
@@ -2570,7 +2566,7 @@ ul.social-icons li a:hover {
   position: relative;
   display: block;
   padding-bottom: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .blog-item-header h2 {
   padding: 0;
