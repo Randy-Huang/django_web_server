@@ -222,7 +222,9 @@
                         <!-- End Title -->
                         <!-- Date -->
                         <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
+                            <a href="#">
+                                {{ article.created_time|date:'jS M, Y' }}
+                            </a>
                         </div>
                         <!-- End Date -->
                     </div>
