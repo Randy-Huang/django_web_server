@@ -208,7 +208,7 @@
                     <!-- End Blog Item Body -->
                 </div>
                 <!-- End Blog Item -->
-                {% for article in article_list %}
+                {% for article in context_article_list %}
                 <!-- Blog Post -->
                 <div class="blog-post padding-bottom-30">
                     <!-- Blog Item Header -->
@@ -272,35 +272,42 @@
                 </div>
                 <!-- End Blog Item -->
                 {% endfor %}
+
                 <!-- Pagination -->
                 <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li>
-                        <a href="#">Prev</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li class="disabled">
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">Next</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
+                    <!-- Pagination for previous check -->
+                    {% if page_obj.has_previous %}
+                        <li>
+                            <a href="{{ request.path }}?browse={{ browse_type }}&page=1">&laquo;</a>
+                        </li>
+                        <li>
+                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.previous_page_number }}">Prev</a>
+                        </li>
+                    {% else %}
+                        <li class="disabled"><a>&laquo;</a></li>
+                        <li class="disabled"><a>Prev</a></li>
+                    {% endif %}
+                    <!-- End Pagination for previous check -->
+                    <!-- Pagination for list generation -->
+                    {% for page in page_obj.paginator.page_range %}
+                        <li {% if page_obj.number == page %} class="active" {% endif %} >
+                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page }}"> {{ page }}</a>
+                        </li>
+                    {% endfor %}
+                    <!-- End Pagination for list generation -->
+                    <!-- Pagination for next check -->
+                    {% if page_obj.has_next %}
+                        <li>
+                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.next_page_number }}">Next</a>
+                        </li>
+                        <li>
+                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ paginator.num_pages }}">&raquo;</a>
+                        </li>
+                    {% else %}
+                        <li class="disabled"><a>Next</a></li>
+                        <li class="disabled"><a>&raquo;</a></li>
+                    {% endif %}
+                    <!-- End Pagination for next check -->
                 </ul>
                 <!-- End Pagination -->
             </div>

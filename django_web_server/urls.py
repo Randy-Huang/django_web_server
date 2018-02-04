@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.static import serve
 from django_web_server.views import TemplateErrorView404
-
 import os
 
 # project site root
@@ -29,7 +28,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-
 ]
 
 # for ssl file from sslforfree.com

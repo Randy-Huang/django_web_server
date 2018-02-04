@@ -35,9 +35,11 @@ APP_NAME = {
 
 # Application definition
 INSTALLED_APPS = [
+    'anymail',
     'ckeditor',
     'ckeditor_uploader',
     'captcha',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -153,14 +155,24 @@ SITE_ID = 1
 
 # Email
 # https://docs.djangoproject.com/en/1.11/ref/settings/
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'randy.hunang@gmail.com'
-EMAIL_HOST_PASSWORD = 'ac22jimmy751'
-EMAIL_PORT = 25
-EMAIL_FROM = 'randy.hunang@gmail.com'
-EMAIL_PORT = 587
+ANYMAIL = {
+    'MAILGUN_API_KEY': 'key-e81d5398f5f1fd4fc16cc5e1078009cb',
+    'MAILGUN_SENDER_DOMAIN': 'mail.kaihunghuang.info',  
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend" 
+DEFAULT_FROM_EMAIL = 'noreply@kaihunghuang.info'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = 'randy.hunang@gmail.com'
+#EMAIL_HOST_PASSWORD = 'xvkien1xvcckgfxx'
+#EMAIL_HOST_PASSWORD = 'ac22jimmy751'
+#EMAIL_FROM = 'randy.hunang@gmail.com'
+#EMAIL_PORT = 587
+
+# Account management
+LOGIN_REDIRECT_URL = '/login/'
+#LOGIN_URL = '/login/'
 
 # django.allauth
 # https://django-allauth.readthedocs.io/en/latest/providers.html
@@ -194,7 +206,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'updated_time',
         ],
         'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
+     #   'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v2.5',
 
@@ -218,6 +230,10 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+# Crispy forms setting
+# https://github.com/django-crispy-forms/django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # CKEditor setting
 # path = 'media/upload/'

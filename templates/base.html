@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'common/img/favicon.ico'%}">
+    <link rel="shortcut icon" href="{% static 'common/img/favicon.jpg'%}">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'common/css/bootstrap.css' %}">
     <!-- Template CSS -->
@@ -89,16 +89,16 @@
                                 <span class="fa-copy {% block menu_pages %}{% endblock %}">Pages</span>
                                 <ul>
                                     <li>
-                                        <a href="pages-about-me.html">About Me</a>
+                                        <a href="#">About Me</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{% url 'blog:blog-list' %}"
+                                <a href="{% url 'blog:blog-list' %}?browse=Article"
                                    class="fa-font {% block menu_blog %}{% endblock %}">Blog</a>
                             </li>
                             <li>
-                                <a href="contact.html" class="fa-comment ">Contact</a>
+                                <a href="#" class="fa-comment ">Contact</a>
                             </li>
                         </ul>
                     </div>

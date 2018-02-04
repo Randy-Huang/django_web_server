@@ -1,7 +1,7 @@
 from django.conf.urls import include
 from django.conf.urls import url
-from login.views import LoginAccountPageView
+from login.views import LoginView
 
 urlpatterns = [
-    url(r'^$', LoginAccountPageView.as_view(), name='login-account'),
+    url(r'^$', LoginView.as_view(), name='login-account'),
 ]

@@ -1,0 +1,23 @@
+{# login/login-base.html #}
+{% extends 'base.html' %}
+
+<!-- === BEGIN HEADER === -->
+<!-- Top Menu -->
+
+{% block menu_services %} active {% endblock %}
+<!-- End Top Menu -->
+<!-- === END HEADER === -->
+
+<!-- === BEGIN HEADER === -->
+
+<!-- === BEGIN CONTENT === -->
+{% block content %}
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            {% block login-content%}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- === END CONTENT === -->

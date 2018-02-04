@@ -2675,26 +2675,13 @@ ul.posts-list li {
 .posts-list-title {
   font-size: 12px;
 }
-/*-----------------------------------------------------------------------------------*/
-/* Pages */
+
+
 /*-----------------------------------------------------------------------------------*/
 /* Services */
-.list-services li i {
-  margin-right: 10px;
-  font-size: 18px;
-}
-.list-services li {
-  font-size: 16px;
-  padding: 5px 0px;
-}
-/* About Me */
-.about-me-icons.list-inline > li {
-  padding: 5px 2px;
-}
-.about-me-icons.list-inline > li a:hover {
-  text-decoration: none;
-}
-/* Login */
+/*-----------------------------------------------------------------------------------*/
+
+/* Account Management */
 .login-page {
   background: none repeat scroll 0 0 #FEFEFE;
   border: 1px solid #e6e6e6;
@@ -2706,6 +2693,133 @@ ul.posts-list li {
 .login-page label {
   font-weight: normal;
 }
+.social-button {
+    font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    -webkit-appearance: none;
+    font-size: 1rem;
+    text-shadow: none;
+    line-height: 1.2;
+    display: inline-block;
+    outline: 0;
+    padding: 10px 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none !important;
+    text-align: center;
+    font-weight: normal !important
+}
+.social-button:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px)
+}
+.social-button a {
+    color: inherit
+}
+.social-button>svg,
+.social-button>span>svg {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    pointer-events: none;
+    vertical-align: bottom;
+    fill: white
+}
+.social-account-button {
+    padding-left: 60px;
+    text-align: left
+}
+.social-account-button svg {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+    position: absolute;
+    left: 14px;
+    top: 6px
+}
+.social-account-button.social-account-button-warning:hover:not([disabled]),
+.social-account-button.social-account-button-warning:focus:not([disabled]) {
+    background: #a00808;
+    color: white !important
+}
+.social-account-button.social-account-button-warning:hover:not([disabled]) svg,
+.social-account-button.social-account-button-warning:focus:not([disabled]) svg {
+    fill: white
+}
+.social-account-button.smaller {
+    white-space: normal;
+    padding: 5px 8px 5px 40px;
+    overflow: hidden;
+    background-size: 30px;
+    background-position: 4px 12px
+}
+.social-account-button.smaller svg {
+    width: 20px;
+    height: 20px;
+    left: 8px;
+    top: 50%;
+    margin-top: -10px
+}
+.social-account-button.smaller:hover:not([disabled]),
+.social-account-button.smaller:focus:not([disabled]) {
+    background-size: 30px;
+    background-position: 4px -39px
+}
+.social-button-fullwidth {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0
+}
+.github-button {
+    background: #666;
+    color: white
+}
+.github-button::before {
+    top: 1px;
+    left: -2px;
+    font-weight: normal
+}
+.github-button:hover:not([disabled]),
+.github-button:focus:not([disabled]) {
+    background: #e6e2e4;
+    color: black !important;
+    text-shadow: none
+}
+.facebook-button {
+    background: #4464a2;
+    color: white
+}
+.facebook-button:hover:not([disabled]),
+.facebook-button:focus:not([disabled]) {
+    background: #e6e2e4;
+    color: black !important;
+    text-shadow: none
+}
+.facebook-button:hover:not([disabled]) svg,
+.facebook-button:focus:not([disabled]) svg {
+    fill: #4464a2
+}
+.google-button {
+    background: #cf3422;
+    color: white
+}
+.google-button:hover:not([disabled]),
+.google-button:focus:not([disabled]) {
+    background: #e6e2e4;
+    color: black !important;
+    text-shadow: none
+}
+.google-button:hover:not([disabled]) svg,
+.google-button:focus:not([disabled]) svg {
+    fill: #eee
+}
+
 /* Sign Up */
 .signup-page {
   background: none repeat scroll 0 0 #FEFEFE;
