@@ -277,35 +277,35 @@
                 <ul class="pagination">
                     <!-- Pagination for previous check -->
                     {% if page_obj.has_previous %}
-                        <li>
-                            <a href="{{ request.path }}?browse={{ browse_type }}&page=1">&laquo;</a>
-                        </li>
-                        <li>
-                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.previous_page_number }}">Prev</a>
-                        </li>
+                    <li>
+                        <a href="{{ request.path }}?browse={{ browse_type }}&page=1">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.previous_page_number }}">Prev</a>
+                    </li>
                     {% else %}
-                        <li class="disabled"><a>&laquo;</a></li>
-                        <li class="disabled"><a>Prev</a></li>
+                    <li class="disabled"><a>&laquo;</a></li>
+                    <li class="disabled"><a>Prev</a></li>
                     {% endif %}
                     <!-- End Pagination for previous check -->
                     <!-- Pagination for list generation -->
                     {% for page in page_obj.paginator.page_range %}
-                        <li {% if page_obj.number == page %} class="active" {% endif %} >
-                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page }}"> {{ page }}</a>
-                        </li>
+                    <li {% if page_obj.number== page %} class="active" {% endif %}>
+                        <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page }}"> {{ page }}</a>
+                    </li>
                     {% endfor %}
                     <!-- End Pagination for list generation -->
                     <!-- Pagination for next check -->
                     {% if page_obj.has_next %}
-                        <li>
-                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.next_page_number }}">Next</a>
-                        </li>
-                        <li>
-                            <a href="{{ request.path }}?browse={{ browse_type }}&page={{ paginator.num_pages }}">&raquo;</a>
-                        </li>
+                    <li>
+                        <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    <li>
+                        <a href="{{ request.path }}?browse={{ browse_type }}&page={{ paginator.num_pages }}">&raquo;</a>
+                    </li>
                     {% else %}
-                        <li class="disabled"><a>Next</a></li>
-                        <li class="disabled"><a>&raquo;</a></li>
+                    <li class="disabled"><a>Next</a></li>
+                    <li class="disabled"><a>&raquo;</a></li>
                     {% endif %}
                     <!-- End Pagination for next check -->
                 </ul>

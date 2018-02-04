@@ -46,162 +46,175 @@
                     <strong>Email:</strong>&nbsp;randy.hunang@gmail.com
                 </div>
             </div>
-            </div>
         </div>
     </div>
-    {% endblock %}
-    <!-- End Phone/Email -->
-    <!-- Header -->
-    <div id="header">
-        <div class="container">
-            <div class="row">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="{% url 'homepage:homepage' %}" title="">
-                        <img src="{% static 'common/img/name_logo.png' %}" alt="Logo"/>
-                    </a>
-                </div>
-                <!-- End Logo -->
+</div>
+{% endblock %}
+<!-- End Phone/Email -->
+<!-- Header -->
+<div id="header">
+    <div class="container">
+        <div class="row">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{% url 'homepage:homepage' %}" title="">
+                    <img src="{% static 'common/img/name_logo.png' %}" alt="Logo"/>
+                </a>
             </div>
+            <!-- End Logo -->
         </div>
     </div>
-    <!-- End Header -->
-    <!-- Top Menu -->
-    <div id="hornav" class="bottom-border-shadow">
-        <div class="container no-padding border-bottom">
-            <div class="row">
-                <div class="col-md-8 no-padding">
-                    <div class="visible-lg">
-                        <ul id="hornavmenu" class="nav navbar-nav">
-                            <li>
-                                <a href="{% url 'homepage:homepage' %}"
-                                   class="fa-home {% block menu_home %}{% endblock %}">Home</a>
-                            </li>
-                            <li>
-                                <span class="fa-gears {% block menu_services %}{% endblock %}">Services</span>
-                                <ul>
-                                    <li>
-                                        <a href="{% url 'login:login-account' %}">Login Account</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="fa-copy {% block menu_pages %}{% endblock %}">Pages</span>
-                                <ul>
-                                    <li>
-                                        <a href="#">About Me</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="{% url 'blog:blog-list' %}?browse=Article"
-                                   class="fa-font {% block menu_blog %}{% endblock %}">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#" class="fa-comment ">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 no-padding">
-                    <ul class="social-icons pull-right">
-                        <li class="social-rss">
-                            <a href="#" target="_blank" title="RSS"></a>
+</div>
+<!-- End Header -->
+<!-- Top Menu -->
+<div id="hornav" class="bottom-border-shadow">
+    <div class="container no-padding border-bottom">
+        <div class="row">
+            <div class="col-md-8 no-padding">
+                <div class="visible-lg">
+                    <ul id="hornavmenu" class="nav navbar-nav">
+                        <li>
+                            <a href="{% url 'homepage:homepage' %}"
+                               class="fa-home {% block menu_home %}{% endblock %}">Home</a>
                         </li>
-                        <li class="social-linkedin">
-                            <a href="https://www.linkedin.com/in/kai-hung-huang-344117106" target="_blank"
-                               title="LinkedIn"></a>
+                        <li>
+                            <span class="fa-gears {% block menu_services %}{% endblock %}">Services</span>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'login:login-account' %}">Login Account</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="social-facebook">
-                            <a href="https://www.facebook.com/randy.huang.37" target="_blank" title="Facebook"></a>
+                        <li>
+                            <span class="fa-copy {% block menu_pages %}{% endblock %}">Pages</span>
+                            <ul>
+                                <li>
+                                    <a href="#">About Me</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="social-github">
-                            <a href="https://github.com/Randy-Huang" target="_blank" title="GitHub"></a>
+                        <li>
+                            <a href="{% url 'blog:blog-list' %}?browse=Article"
+                               class="fa-font {% block menu_blog %}{% endblock %}">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa-comment ">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- End Top Menu -->
-    <!-- === END HEADER === -->
-
-
-    <!-- === BEGIN CONTENT === -->
-    {% block content %}{% endblock %}
-    <!-- End Portfolio -->
-
-
-    <!-- === END CONTENT === -->
-    <!-- === BEGIN FOOTER === -->
-    <div id="base">
-        <div class="container bottom-border">
-            <div class="row">
-                <!-- Disclaimer -->
-                <div class="margin-top-30 margin-bottom-30 col-md-8">
-                    <h3 class="class margin-bottom-10">The Blog Disclaimer</h3>
-                    <ul>
-                        <li>Any views or opinions represented in this blog belong solely to the blog owner and do not represent those of people, institutions or organizations that the owner may or may not be associated with in professional or personal capacity, unless explicitly stated.</li>
-                        <li>Any views or opinions are not intended to malign any religion, ethnic group, club, organization, company, or individual.</li>
-                        <li>If there is an image appearing on this blog that belongs to you and do not wish for it appear on this blog, please E-mail with a link to said image and it will be removed immediately.</li>
-                        <li>All content provided on this blog is for informational purposes only. The owner of this blog makes no representations as to the accuracy or completeness of any information on this site or found by following any link on this site.</li>
-                        <li>Please noted the information in this weblog is provided “AS IS” with no warranties, and confers no rights.</li>
-                    </ul>
-                </div>
-                <!-- End Disclaimer -->
-                <!-- Contact Details -->
-                <div class="margin-top-30 margin-bottom-30 col-md-4">
-                    <h3 class="margin-bottom-10">Contact Details</h3>
-                    <p>
-                        <span class="fa-phone">Telephone: </span>+886-925-133-902
-                        <br>
-                        <span class="fa-envelope">Email: </span>
-                        <a href="randy.hunang@gmail.com">randy.hunang@gmail.com</a>
-                        <br>
-                        <span class="fa-link">Website: </span>
-                        <a href="https://www.kaihunghuang.info">www.kaihunghuang.info</a>
-                        <br>
-                        <span class="fa-github">GitHub: </span>
-                        <a href="https://github.com/Randy-Huang">github.com/Randy-Huang</a>
-                        <br>
-                        <span class="fa-linkedin">Linkedin: </span>
-                        <a href="https://www.linkedin.com/in/kai-hung-huang-344117106/">linkedin.com/Kai-Hung Huang</a>
-                        <br>
-                        <span class="fa-map-marker">Address: </span> 3F., No.3-2, Ln. 180, Sec. 1, Zhongshan N. Rd., Tamsui Dist., New Taipei City 251, Taiwan (R.O.C.)
-                    </p>
-                </div>
-                <!-- End Contact Details -->
+            <div class="col-md-4 no-padding">
+                <ul class="social-icons pull-right">
+                    <li class="social-rss">
+                        <a href="#" target="_blank" title="RSS"></a>
+                    </li>
+                    <li class="social-linkedin">
+                        <a href="https://www.linkedin.com/in/kai-hung-huang-344117106" target="_blank"
+                           title="LinkedIn"></a>
+                    </li>
+                    <li class="social-facebook">
+                        <a href="https://www.facebook.com/randy.huang.37" target="_blank" title="Facebook"></a>
+                    </li>
+                    <li class="social-github">
+                        <a href="https://github.com/Randy-Huang" target="_blank" title="GitHub"></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <div id="footer" class="background-grey">
-        <!-- Copyright -->
-        <div id="copyright">
-            <p class="align-middle text-center">Copyright (c) 2017 kaihunghuang.info All rights reserved</p>
+</div>
+<!-- End Top Menu -->
+<!-- === END HEADER === -->
+
+
+<!-- === BEGIN CONTENT === -->
+{% block content %}{% endblock %}
+<!-- End Portfolio -->
+
+
+<!-- === END CONTENT === -->
+<!-- === BEGIN FOOTER === -->
+<div id="base">
+    <div class="container bottom-border">
+        <div class="row">
+            <!-- Disclaimer -->
+            <div class="margin-top-30 margin-bottom-30 col-md-8">
+                <h3 class="class margin-bottom-10">The Blog Disclaimer</h3>
+                <ul>
+                    <li>Any views or opinions represented in this blog belong solely to the blog owner and do not
+                        represent those of people, institutions or organizations that the owner may or may not be
+                        associated with in professional or personal capacity, unless explicitly stated.
+                    </li>
+                    <li>Any views or opinions are not intended to malign any religion, ethnic group, club, organization,
+                        company, or individual.
+                    </li>
+                    <li>If there is an image appearing on this blog that belongs to you and do not wish for it appear on
+                        this blog, please E-mail with a link to said image and it will be removed immediately.
+                    </li>
+                    <li>All content provided on this blog is for informational purposes only. The owner of this blog
+                        makes no representations as to the accuracy or completeness of any information on this site or
+                        found by following any link on this site.
+                    </li>
+                    <li>Please noted the information in this weblog is provided “AS IS” with no warranties, and confers
+                        no rights.
+                    </li>
+                </ul>
+            </div>
+            <!-- End Disclaimer -->
+            <!-- Contact Details -->
+            <div class="margin-top-30 margin-bottom-30 col-md-4">
+                <h3 class="margin-bottom-10">Contact Details</h3>
+                <p>
+                    <span class="fa-phone">Telephone: </span>+886-925-133-902
+                    <br>
+                    <span class="fa-envelope">Email: </span>
+                    <a href="randy.hunang@gmail.com">randy.hunang@gmail.com</a>
+                    <br>
+                    <span class="fa-link">Website: </span>
+                    <a href="https://www.kaihunghuang.info">www.kaihunghuang.info</a>
+                    <br>
+                    <span class="fa-github">GitHub: </span>
+                    <a href="https://github.com/Randy-Huang">github.com/Randy-Huang</a>
+                    <br>
+                    <span class="fa-linkedin">Linkedin: </span>
+                    <a href="https://www.linkedin.com/in/kai-hung-huang-344117106/">linkedin.com/Kai-Hung Huang</a>
+                    <br>
+                    <span class="fa-map-marker">Address: </span> 3F., No.3-2, Ln. 180, Sec. 1, Zhongshan N. Rd., Tamsui
+                    Dist., New Taipei City 251, Taiwan (R.O.C.)
+                </p>
+            </div>
+            <!-- End Contact Details -->
         </div>
-        <!-- End Copyright -->
     </div>
-    <!-- End Footer -->
-    <!-- JS -->
-    <script type="text/javascript" src="{% static 'common/js/jquery.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'common/js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'common/js/scripts.js' %}"></script>
-    <!-- Isotope - Portfolio Sorting -->
-    <script type="text/javascript" src="{% static 'common/js/jquery.isotope.js' %}"></script>
-    <!-- Mobile Menu - Slicknav -->
-    <script type="text/javascript" src="{% static 'common/js/jquery.slicknav.js' %}"></script>
-    <!-- Animate on Scroll-->
-    <script type="text/javascript" src="{% static 'common/js/jquery.visible.js' %}" charset="utf-8"></script>
-    <!-- Sticky Div -->
-    <script type="text/javascript" src="{% static 'common/js/jquery.sticky.js' %}" charset="utf-8"></script>
-    <!-- Slimbox2-->
-    <script type="text/javascript" src="{% static 'common/js/slimbox2.js' %}" charset="utf-8"></script>
-    <!-- Modernizr -->
-    <script type="text/javascript" src="{% static 'common/js/modernizr.custom.js' %}"></script>
-    <!-- Another JS -->
-    {% block import_js_file %}{% endblock %}
-    <!-- End JS -->
+</div>
+<!-- Footer -->
+<div id="footer" class="background-grey">
+    <!-- Copyright -->
+    <div id="copyright">
+        <p class="align-middle text-center">Copyright (c) 2017 kaihunghuang.info All rights reserved</p>
+    </div>
+    <!-- End Copyright -->
+</div>
+<!-- End Footer -->
+<!-- JS -->
+<script type="text/javascript" src="{% static 'common/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'common/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'common/js/scripts.js' %}"></script>
+<!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="{% static 'common/js/jquery.isotope.js' %}"></script>
+<!-- Mobile Menu - Slicknav -->
+<script type="text/javascript" src="{% static 'common/js/jquery.slicknav.js' %}"></script>
+<!-- Animate on Scroll-->
+<script type="text/javascript" src="{% static 'common/js/jquery.visible.js' %}" charset="utf-8"></script>
+<!-- Sticky Div -->
+<script type="text/javascript" src="{% static 'common/js/jquery.sticky.js' %}" charset="utf-8"></script>
+<!-- Slimbox2-->
+<script type="text/javascript" src="{% static 'common/js/slimbox2.js' %}" charset="utf-8"></script>
+<!-- Modernizr -->
+<script type="text/javascript" src="{% static 'common/js/modernizr.custom.js' %}"></script>
+<!-- Another JS -->
+{% block import_js_file %}{% endblock %}
+<!-- End JS -->
 </body>
 </html>
 <!-- === END FOOTER === -->

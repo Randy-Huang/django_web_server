@@ -9,9 +9,23 @@
 {% block login-content %}
 <!-- Login Box -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
-    <symbol id="github" viewbox="0 0 250 243.83"><path d="M125 0a125 125 0 0 0-39.5 243.61c6.25 1.15 8.53-2.71 8.53-6 0-3-.11-10.83-.17-21.26-34.77 7.55-42.11-16.76-42.11-16.76-5.68-14.44-13.88-18.28-13.88-18.28-11.35-7.76.86-7.6.86-7.6 12.54.88 19.15 12.88 19.15 12.88C69 205.67 87.13 200.16 94.25 197c1.14-8.08 4.36-13.59 7.94-16.71-27.76-3.15-56.94-13.88-56.94-61.78a48.32 48.32 0 0 1 12.86-33.59c-1.29-3.16-5.57-15.87 1.23-33.08 0 0 10.5-3.36 34.37 12.81a118.48 118.48 0 0 1 62.59 0c23.86-16.18 34.34-12.81 34.34-12.81 6.82 17.21 2.53 29.92 1.24 33.08a48.24 48.24 0 0 1 12.85 33.54c0 48-29.23 58.59-57.07 61.68 4.49 3.86 8.49 11.49 8.49 23.15 0 16.71-.15 30.19-.15 34.29 0 3.34 2.25 7.23 8.6 6A125 125 0 0 0 125 0z" fill="#181616" fill-rule="evenodd"/></symbol>
-    <symbol id="facebook" viewbox="-574 359 75 75"><path d="M-511.499 359h-50c-6.875 0-12.501 5.626-12.501 12.502v49.997c0 6.88 5.626 12.501 12.501 12.501h50c6.876 0 12.499-5.621 12.499-12.502v-49.996c0-6.876-5.624-12.502-12.499-12.502zm1.263 37.5h-12.201v32.813H-536.5V396.5h-6.777v-10.735h6.777v-6.972c0-9.473 4.086-15.105 15.225-15.105h12.835v11.614h-10.483c-3.111-.005-3.497 1.622-3.497 4.652l-.017 5.811h14.063l-1.862 10.735z"/></symbol>
-    <symbol id="google" viewbox="0 0 512 512"><path style="fill:#FBBB00;" d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256 c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456 C103.821,274.792,107.225,292.797,113.47,309.408z"/><path style="fill:#518EF8;" d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451 c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535 c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"/><path style="fill:#28B446;" d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512 c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771 c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"/><path style="fill:#F14336;" d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012 c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0 C318.115,0,375.068,22.126,419.404,58.936z"/></symbol>
+    <symbol id="github" viewbox="0 0 250 243.83">
+        <path d="M125 0a125 125 0 0 0-39.5 243.61c6.25 1.15 8.53-2.71 8.53-6 0-3-.11-10.83-.17-21.26-34.77 7.55-42.11-16.76-42.11-16.76-5.68-14.44-13.88-18.28-13.88-18.28-11.35-7.76.86-7.6.86-7.6 12.54.88 19.15 12.88 19.15 12.88C69 205.67 87.13 200.16 94.25 197c1.14-8.08 4.36-13.59 7.94-16.71-27.76-3.15-56.94-13.88-56.94-61.78a48.32 48.32 0 0 1 12.86-33.59c-1.29-3.16-5.57-15.87 1.23-33.08 0 0 10.5-3.36 34.37 12.81a118.48 118.48 0 0 1 62.59 0c23.86-16.18 34.34-12.81 34.34-12.81 6.82 17.21 2.53 29.92 1.24 33.08a48.24 48.24 0 0 1 12.85 33.54c0 48-29.23 58.59-57.07 61.68 4.49 3.86 8.49 11.49 8.49 23.15 0 16.71-.15 30.19-.15 34.29 0 3.34 2.25 7.23 8.6 6A125 125 0 0 0 125 0z"
+              fill="#181616" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="facebook" viewbox="-574 359 75 75">
+        <path d="M-511.499 359h-50c-6.875 0-12.501 5.626-12.501 12.502v49.997c0 6.88 5.626 12.501 12.501 12.501h50c6.876 0 12.499-5.621 12.499-12.502v-49.996c0-6.876-5.624-12.502-12.499-12.502zm1.263 37.5h-12.201v32.813H-536.5V396.5h-6.777v-10.735h6.777v-6.972c0-9.473 4.086-15.105 15.225-15.105h12.835v11.614h-10.483c-3.111-.005-3.497 1.622-3.497 4.652l-.017 5.811h14.063l-1.862 10.735z"/>
+    </symbol>
+    <symbol id="google" viewbox="0 0 512 512">
+        <path style="fill:#FBBB00;"
+              d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256 c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456 C103.821,274.792,107.225,292.797,113.47,309.408z"/>
+        <path style="fill:#518EF8;"
+              d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451 c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535 c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"/>
+        <path style="fill:#28B446;"
+              d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512 c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771 c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"/>
+        <path style="fill:#F14336;"
+              d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012 c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0 C318.115,0,375.068,22.126,419.404,58.936z"/>
+    </symbol>
 </svg>
 
 <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
@@ -23,51 +37,54 @@
             <span class="input-group-addon">
                 <i class="fa fa-user"></i>
             </span>
-                            <input placeholder="Username" class="form-control" type="text">
-                        </div>
-                        <div class="input-group margin-bottom-20">
+            <input placeholder="Username" class="form-control" type="text">
+        </div>
+        <div class="input-group margin-bottom-20">
                                         <span class="input-group-addon">
                                             <i class="fa fa-lock"></i>
                                         </span>
-                            <input placeholder="Password" class="form-control" type="password">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="checkbox">
-                                    <input type="checkbox">Stay signed in</label>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-primary pull-right" type="submit">Login</button>
-                            </div>
-                        </div>
-                        <div class="login-social-buttons">
-                            {% providers_media_js %}
-                            <a id="login-with-github" href="{% provider_login_url "github" %}" data-network="Github" class="social-button github-button social-account-button social-button-fullwidth">
-                                <svg class="icon-github">
-                                    <use xlink:href="#github"></use>
-                                </svg>
-                                <span>Log in with GitHub</span>
-                            </a>
-                            <a id="login-with-facebook" href="{% provider_login_url "facebook" method="js_sdk" %}" data-network="Facebook" class="social-button facebook-button social-account-button social-button-fullwidth">
-                                <svg class="icon-facebook">
-                                    <use xlink:href="#facebook"></use>
-                                </svg>
-                                <span>Log in with Facebook</span>
-                            </a>
-                            <a id="login-with-google" href="{% provider_login_url "google" %}" data-network="Google" class="social-button google-button social-account-button social-button-fullwidth">
-                                <svg class="icon-google">
-                                    <use xlink:href="#google"></use>
-                                </svg>
-                                <span>Log in with Google</span>
-                            </a>
-                            <a target="_blank" href="https://privacypolicies.com/privacy/view/y5sNpR">Privacy policy</a>
-                        </div>
-                        <hr>
-                        <h4>Forget your Password ?</h4>
-                        <p>
-                            <a href="#">Click here to reset your password.</a>
-                        </p>
-                    </form>
+            <input placeholder="Password" class="form-control" type="password">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label class="checkbox">
+                    <input type="checkbox">Stay signed in</label>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary pull-right" type="submit">Login</button>
+            </div>
+        </div>
+        <div class="login-social-buttons">
+            {% providers_media_js %}
+            <a id="login-with-github" href="{% provider_login_url " github" %}" data-network="Github"
+            class="social-button github-button social-account-button social-button-fullwidth">
+            <svg class="icon-github">
+                <use xlink:href="#github"></use>
+            </svg>
+            <span>Log in with GitHub</span>
+            </a>
+            <a id="login-with-facebook" href="{% provider_login_url " facebook" method="js_sdk" %}"
+            data-network="Facebook" class="social-button facebook-button social-account-button social-button-fullwidth">
+            <svg class="icon-facebook">
+                <use xlink:href="#facebook"></use>
+            </svg>
+            <span>Log in with Facebook</span>
+            </a>
+            <a id="login-with-google" href="{% provider_login_url " google" %}" data-network="Google"
+            class="social-button google-button social-account-button social-button-fullwidth">
+            <svg class="icon-google">
+                <use xlink:href="#google"></use>
+            </svg>
+            <span>Log in with Google</span>
+            </a>
+            <a target="_blank" href="https://privacypolicies.com/privacy/view/y5sNpR">Privacy policy</a>
+        </div>
+        <hr>
+        <h4>Forget your Password ?</h4>
+        <p>
+            <a href="#">Click here to reset your password.</a>
+        </p>
+    </form>
 </div>
 <!-- End Login Box -->
 {% endblock %}
