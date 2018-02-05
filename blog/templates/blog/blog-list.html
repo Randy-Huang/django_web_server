@@ -290,7 +290,7 @@
                     <!-- End Pagination for previous check -->
                     <!-- Pagination for list generation -->
                     {% for page in page_obj.paginator.page_range %}
-                    <li {% if page_obj.number== page %} class="active" {% endif %}>
+                    <li {% if page_obj.number == page %} class="active" {% endif %}>
                         <a href="{{ request.path }}?browse={{ browse_type }}&page={{ page }}"> {{ page }}</a>
                     </li>
                     {% endfor %}

@@ -187,6 +187,11 @@ AUTHENTICATION_BACKENDS = (
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+    },
+
     'facebook': {
         'METHOD': 'oauth2',
         'SCOPE': ['email', 'public_profile', 'user_friends'],
@@ -208,27 +213,19 @@ SOCIALACCOUNT_PROVIDERS = {
         'EXCHANGE_TOKEN': True,
      #   'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.5',
+    },
 
-        'gitlab': {
-            'GITLAB_URL': 'https://your.gitlab.server.tld',
-            'SCOPE': ['read_user'],
-        },
-
-        'linkedin': {
-            'SCOPE': [
-                'r_emailaddress',
-            ],
-            'PROFILE_FIELDS': [
-                'id',
-                'first-name',
-                'last-name',
-                'email-address',
-                'picture-url',
-                'public-profile-url',
-            ]
-        }
-    }
+    'linkedin': {
+        'SCOPE': ['r_emailaddress'],
+        'PROFILE_FIELDS': [
+            'id',
+            'first-name',
+            'last-name',
+            'email-address',
+            'picture-url',
+            'public-profile-url',
+        ],
+    },
 }
 
 # Crispy forms setting
