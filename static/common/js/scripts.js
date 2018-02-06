@@ -105,16 +105,27 @@ $(function () {
       }, function () {
       }
    );
-
 });
 
 // Mobile Menu
-    $(function(){
-        $('#hornavmenu').slicknav();
-        $( "div.slicknav_menu" ).addClass( "hidden-lg" );
-    });
+$(function(){
+    $('#hornavmenu').slicknav();
+    $( "div.slicknav_menu" ).addClass( "hidden-lg" );
+});
 
 // Sticky Div
-  $(window).load(function(){
+$(window).load(function(){
     $("#hornav").sticky({ topSpacing: 0 });
-  });
+});
+
+$(function () {
+    $("#btn").click(function () {
+        $.blockUI({
+            message: '<h1>讀取中...</h1>'
+        });
+
+        setTimeout(function () {
+            $.unblockUI();
+        }, 3000);
+    });
+});
