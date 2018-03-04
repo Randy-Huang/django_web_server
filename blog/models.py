@@ -4,13 +4,6 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class Comment(models.Model):
-    user = models.ForeignKey(User)
-    content = models.TextField()
-
-    def __str__(self):
-        return self.name
-
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
