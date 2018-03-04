@@ -67,6 +67,8 @@ backup/
 ckeditor 
 admin 
 resume
+disqus
+static/ssl
 
 # Flask stuff:
 instance/

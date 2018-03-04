@@ -120,15 +120,32 @@ $(window).load(function(){
 
 $(document).ready(function() {
     $('#demo').click(function() {
-        $.blockUI({ css: {
-            border: 'none',
-            padding: '15px',
-            backgroundColor: '#000',
-            '-webkit-border-radius': '10px',
-            '-moz-border-radius': '10px',
-            opacity: .5,
-            color: '#fff'
-        } });
+        $.blockUI({ 
+            message: $(
+                '<div class="lds-ellipsis">' +
+                '<div><div></div></div>' +
+                '<div><div></div></div>' +
+                '<div><div></div></div>' +
+                '<div><div></div></div>' +
+                '<div><div></div></div>' +
+                '</div>'
+            ),
+
+            css: { borderWidth: '0px', backgroundColor: 'transparent' },
+
+            //css: {
+            //    border: 'none',
+            //    padding: '15px',
+            //    backgroundColor: '#000',
+            //    color: '#fff',
+            //    '-webkit-border-radius': '10px',
+            //    '-moz-border-radius': '10px',
+            //    opacity: .5,
+            //    top:  ($(window).height() - 200) /2 + 'px', 
+            //    left: ($(window).width() - 400) /2 + 'px', 
+            //    width: '400px' 
+            //},
+        });
 
         setTimeout($.unblockUI, 2000);
     });

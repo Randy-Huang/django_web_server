@@ -35,18 +35,22 @@ APP_NAME = {
 
 # Application definition
 INSTALLED_APPS = [
+    # Django native package
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.messages',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.staticfiles',
+
+    # Django packages
     'anymail',
     'ckeditor',
     'ckeditor_uploader',
     'captcha',
     'crispy_forms',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.sites',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'disqus',
 
     # allauth package
     'allauth',
@@ -287,6 +291,11 @@ RECAPTCHA_PUBLIC_KEY = '6LdVXDsUAAAAAEP2ZoxcwmI8W7TWK-NJPsWzB6HU'
 RECAPTCHA_PRIVATE_KEY = '6LdVXDsUAAAAAMQ6cuaAXdLw1FRCbnovmKW3JPTz'
 NOCAPTCHA = True
 
+# Disqus for commenting
+# https://django-disqus.readthedocs.io/en/latest/installation.html
+DISQUS_API_KEY = 'E52gR3k6Pd5mtLysBZhxVCPXAlsMYpz9C95rD35pepGL4WXzWqZ1EoGcDesqeUXV'
+DISQUS_WEBSITE_SHORTNAME = 'kaihunghuang'
+
 # Error notifications for managing
 # https://docs.djangoproject.com/en/1.11/ref/settings/#admins
 ADMINS = [
@@ -333,6 +342,7 @@ LOGGING = {
             'formatter': 'standard',
         },
         'console': {
+            'level': 'DEBUG',
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'standard',

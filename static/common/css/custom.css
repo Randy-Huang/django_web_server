@@ -123,7 +123,14 @@
 }
 
 .lds-ellipsis {
-    position: relative;
+    /*position: relative;*/
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    width: 120px;
+    height: 120px;
+    margin-left: -75px;
+    margin-top: -75px;
 }
 
 .lds-ellipsis>div {

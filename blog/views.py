@@ -1,9 +1,5 @@
-from blog.models import Article
-from blog.models import Category
-from blog.models import Tag
-from django.shortcuts import render
-from django.views.generic import ListView 
-from django.views.generic import DetailView
+from blog.models import Article, Category, Tag 
+from django.views.generic import DetailView, ListView 
 
 # Global constant
 ITEMS_PER_PAGE = 1
@@ -34,16 +30,16 @@ class ArticleListView(ListView):
         return queryset 
 
 class ArticleDetailView(DetailView):
+    context_object_name = 'context_article'
     model = Article
     template_name = "blog/blog-article.html"
-    pk_article = 'article_name'
-    context_object_name = 'context_article'
+    pk_url_kwarg = 'article_name'
     
     def get_context_data(self, **kwargs):
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
-        return super(ArticleDetailView, self).get_context_data(**kwargs)   
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)   
+        return context 
 
-    def get_object(self):
-        obj = super(ArticleDetailView, self).get_object
-        return obj
+    def get_object(self, queryset=None):
+        return super(ArticleDetailView, self).get_object()
 
