@@ -1,0 +1,70 @@
+{# blog/blog-base.html #}
+{% extends 'base.html' %}
+{% load static %}
+{% get_media_prefix %}
+
+<!-- === BEGIN HEADER === -->
+<!-- Top Menu -->
+{% block menu_blog %} active {% endblock %}
+<!-- End Top Menu -->
+<!-- === END HEADER === -->
+
+
+<!-- === BEGIN CONTENT === -->
+{% block content %}
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Column -->
+            <div class="col-md-9">
+                {% block blog_content %}{% endblock %}
+            </div>
+            <!-- End Main Column -->
+            <!-- Side Column -->
+            <div class="col-md-3">
+                <!-- Blog Tags -->
+                <div class="blog-tags">
+                    <h3>Tags</h3>
+                    <ul class="blog-tags">
+                        {% for tag in tag_list %}
+                        <li>
+                            <a href="#" class="blog-tag">{{ tag.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- End Blog Tags -->
+                <!-- Recent Posts -->
+                <div class="recent-posts">
+                    <h3>Recent Posts</h3>
+                    <ul class="posts-list margin-top-10">
+                        {% for article in recent_article_list %}
+                        <li>
+                            <div class="recent-post">
+                                <a href="{% url 'blog:article' article.pk %}">
+                                    <img class="pull-left" src="{{ MEDIA_URL }}{{ ckeditor_folder }}{{ article.created_time|date:'Y/m/d/' }}Title.jpg" width="54">
+                                </a>
+                                <a href="{% url 'blog:article' article.pk %}" class="posts-list-title">{{ article.title }}
+                                </a>
+                                <br>
+                                <span class="recent-post-date"> {{ article.created_time|date:'M d, Y'}}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- End Recent Posts -->
+                <!-- Visitor Counter -->
+                <div class="recent-posts">
+                    <h3>Visitor</h3>
+                    <script type="text/javascript" src="//counter.websiteout.net/js/7/7/0/1"></script>
+                </div>
+                <!-- End Visitor Counter -->
+            </div>
+            <!-- End Side Column -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- === END CONTENT === -->

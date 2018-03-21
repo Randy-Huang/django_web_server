@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
 
+    # Oauth2client
+    #'oauth2client.contrib.django_util',
+    'oauth2client',
+
     # Django packages
+    'analytical',
     'anymail',
     'ckeditor',
     'ckeditor_uploader',
@@ -90,6 +95,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
+                'django.template.context_processors.media',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -295,6 +301,18 @@ NOCAPTCHA = True
 # https://django-disqus.readthedocs.io/en/latest/installation.html
 DISQUS_API_KEY = 'E52gR3k6Pd5mtLysBZhxVCPXAlsMYpz9C95rD35pepGL4WXzWqZ1EoGcDesqeUXV'
 DISQUS_WEBSITE_SHORTNAME = 'kaihunghuang'
+
+# django-analytical
+# https://django-analytical.readthedocs.io/en/latest/
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-115055661-1'
+GOOGLE_ANALYTICS_TRACKING_STYLE = 1
+GOOGLE_ANALYTICS_SITE_SPEED = True 
+
+# Google oauth2client 
+# https://oauth2client.readthedocs.io/en/latest/#
+GOOGLE_OAUTH2_CLIENT_ID = '471820973595-o50e08u5g5rkqqp6i59trhl4g1bd0vq2.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'HNVIwL5GGS1-Mmn_kLex3W1j'
+GOOGLE_OAUTH2_SCOPES = ('email', 'profile')
 
 # Error notifications for managing
 # https://docs.djangoproject.com/en/1.11/ref/settings/#admins

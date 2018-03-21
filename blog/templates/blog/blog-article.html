@@ -1,5 +1,5 @@
 {# blog/blog-article.html #}
-{% extends 'base.html' %}
+{% extends 'blog/blog-base.html' %}
 {% load static %}
 {% load disqus_tags %}
 
@@ -8,19 +8,11 @@
 <!-- CKEditor Plugins -->
 <link rel="stylesheet" type="text/css" href="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism.css' %}">
 {% endblock %}
-<!-- Top Menu -->
-{% block menu_blog %} active {% endblock %}
-<!-- End Top Menu -->
 <!-- === END HEADER === -->
 
-
 <!-- === BEGIN CONTENT === -->
-{% block content %}
-<div id="content">
-    <div class="container background-white">
-        <div class="row margin-vert-30">
-            <!-- Main Column -->
-            <div class="col-md-9">
+{% block blog_content %}
+                <!-- Blog Post -->
                 <div class="blog-post">
                     <div class="blog-item-header">
                         <h2>
@@ -57,57 +49,13 @@
                     <div class="blog-item">
                         <div class="clearfix"></div>
                         <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="{% static 'common/img/blog/image1.jpg' %}"
-                                     alt="image1">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                                    eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.</p>
-                            </div>
                             <div class="col-md-12">
-                                <p>
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                                    ipsum
-                                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                    et justo duo dolores et ea rebum. Stet
-                                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                                    ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam
-                                    erat, sed diam voluptua.</p>
-                                <blockquote class="primary">
-                                    <p>
-                                        <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-                                    </p>
-                                    <small>
-                                        Someone famous in
-                                        <cite title="Source Title">Source Title</cite>
-                                    </small>
-                                </blockquote>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                                    eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.</p>
-                                <p>Ut summo deserunt sit, quaeque hendrerit assentior cu mei. Sale electram nam ut.
-                                    Putent perpetua reformidans ex vix, libris nostrud tractatos cu sit, est porro omnes
-                                    nominati eu. Cu nullam similique complectitur
-                                    eam. Viris phaedrum ullamcorper id eos.</p>
+                            {{ context_article.body|safe }}
                             </div>
-
                         </div>
                         <div class="blog-item-footer">
+                            <h1>Comments</h1>
+                            <div class="blog-comment-heading"></div>
                             <!-- Comments -->
                             {% disqus_show_comments %}  
                             <!-- End Comments -->
@@ -115,90 +63,6 @@
                     </div>
                 </div>
                 <!-- End Blog Post -->
-            </div>
-            <!-- End Main Column -->
-            <!-- Side Column -->
-            <div class="col-md-3">
-                <!-- Blog Tags -->
-                <div class="blog-tags">
-                    <h3>Tags</h3>
-                    <ul class="blog-tags">
-                        {% for tag in tag_list %}
-                        <li>
-                            <a href="#" class="blog-tag">{{tag.name}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- End Blog Tags -->
-                <!-- Recent Posts -->
-                <div class="recent-posts">
-                    <h3>Recent Posts</h3>
-                    <ul class="posts-list margin-top-10">
-                        <li>
-                            <div class="recent-post">
-                                <a href="">
-                                    <img class="pull-left" src="{% static 'common/img/blog/thumbs/thumb1.jpg' %}"
-                                         alt="thumb1">
-                                </a>
-                                <a href="#" class="posts-list-title">Sidebar post example</a>
-                                <br>
-                                <span class="recent-post-date">
-                                                July 30, 2013
-                                            </span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li>
-                            <div class="recent-post">
-                                <a href="">
-                                    <img class="pull-left" src="{% static 'common/img/blog/thumbs/thumb2.jpg' %}"
-                                         alt="thumb2">
-                                </a>
-                                <a href="#" class="posts-list-title">Sidebar post example</a>
-                                <br>
-                                <span class="recent-post-date">
-                                                July 30, 2013
-                                            </span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li>
-                            <div class="recent-post">
-                                <a href="">
-                                    <img class="pull-left" src="{% static 'common/img/blog/thumbs/thumb3.jpg' %}"
-                                         alt="thumb3">
-                                </a>
-                                <a href="#" class="posts-list-title">Sidebar post example</a>
-                                <br>
-                                <span class="recent-post-date">
-                                                July 30, 2013
-                                            </span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li>
-                            <div class="recent-post">
-                                <a href="">
-                                    <img class="pull-left" src="{% static 'common/img/blog/thumbs/thumb4.jpg' %}"
-                                         alt="thumb4">
-                                </a>
-                                <a href="#" class="posts-list-title">Sidebar post example</a>
-                                <br>
-                                <span class="recent-post-date">
-                                                July 30, 2013
-                                            </span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End Recent Posts -->
-                <!-- End Side Column -->
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
 <!-- === END CONTENT === -->
 

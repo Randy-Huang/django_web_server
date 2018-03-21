@@ -1,5 +1,7 @@
 from blog.models import Article, Category, Tag 
+from django.conf import settings
 from django.views.generic import DetailView, ListView 
+from oauth2client.contrib.django_util import decorators
 
 # Global constant
 ITEMS_PER_PAGE = 1
@@ -13,8 +15,9 @@ class ArticleListView(ListView):
 
     def get_context_data(self, **kwargs):
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
-        kwargs['article_list'] = Article.objects.all()
+        kwargs['recent_article_list'] = Article.objects.all().order_by('-created_time')[0:5]
         kwargs['browse_type'] = self.request.GET.get('browse')
+        kwargs['ckeditor_folder'] = settings.CKEDITOR_UPLOAD_PATH
         return super(ArticleListView, self).get_context_data(**kwargs)   
 
     def get_queryset(self):
@@ -37,6 +40,8 @@ class ArticleDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
+        kwargs['recent_article_list'] = Article.objects.all().order_by('-created_time')[0:5]
+        kwargs['ckeditor_folder'] = settings.CKEDITOR_UPLOAD_PATH
         context = super(ArticleDetailView, self).get_context_data(**kwargs)   
         return context 
 
