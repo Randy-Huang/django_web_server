@@ -52,6 +52,11 @@ urlpatterns += [
     url(r'^login/', include('login.urls', namespace='login', app_name='login')),
 ]
 
+# portfolio app
+urlpatterns += [
+    url(r'^portfolio/', include('portfolio.urls', namespace='portfolio', app_name='portfolio')),
+]
+
 # blog app
 urlpatterns += [
     url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),

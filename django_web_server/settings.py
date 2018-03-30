@@ -31,6 +31,7 @@ APP_NAME = {
     'blog': 'blog',
     'homepage': 'homepage',
     'login': 'login',
+    'portfolio': 'portfolio'
 }
 
 # Application definition
@@ -71,6 +72,7 @@ INSTALLED_APPS = [
     APP_NAME['homepage'],
     APP_NAME['blog'],
     APP_NAME['login'],
+    APP_NAME['portfolio'],
 ]
 
 MIDDLEWARE = [
@@ -152,6 +154,7 @@ STATICFILES_DIRS = [
     (APP_NAME['homepage'], os.path.join(BASE_DIR, APP_NAME['homepage'], 'app_static/')),
     (APP_NAME['blog'], os.path.join(BASE_DIR, APP_NAME['blog'], 'app_static/')),
     (APP_NAME['login'], os.path.join(BASE_DIR, APP_NAME['login'], 'app_static/')),
+    (APP_NAME['portfolio'], os.path.join(BASE_DIR, APP_NAME['portfolio'], 'app_static/')),
 ]
 
 # Static files for admin upload management

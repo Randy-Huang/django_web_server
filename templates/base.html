@@ -84,12 +84,8 @@
                                class="fa-home {% block menu_home %}{% endblock %}">Home</a>
                         </li>
                         <li>
-                            <span class="fa-gears {% block menu_services %}{% endblock %}">Services</span>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'login:login-account' %}">Login Account</a>
-                                </li>
-                            </ul>
+                            <a href="{% url 'portfolio:portfolio-list' %}"
+                                class="fa-th {% block menu_portfolio %}{% endblock %}">Portfolio</a>
                         </li>
                         <li>
                             <a href="{% url 'homepage:about-me' %}"
@@ -98,9 +94,6 @@
                         <li>
                             <a href="{% url 'blog:blog-list' %}?browse=Article"
                                class="fa-font {% block menu_blog %}{% endblock %}">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa-comment ">Contact</a>
                         </li>
                     </ul>
                 </div>
