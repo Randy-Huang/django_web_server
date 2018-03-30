@@ -313,6 +313,8 @@ GOOGLE_ANALYTICS_SITE_SPEED = True
 GOOGLE_OAUTH2_CLIENT_ID = '471820973595-o50e08u5g5rkqqp6i59trhl4g1bd0vq2.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'HNVIwL5GGS1-Mmn_kLex3W1j'
 GOOGLE_OAUTH2_SCOPES = ('email', 'profile')
+GOOGLE_OAUTH2_CLIENT_SECRETS_JSON = os.path.join(STATIC_ROOT, 'google/', 'client_secrets.json')
+SERVICE_ACCOUNT_FILE = os.path.join(STATIC_ROOT, 'google/', 'service.json')
 
 # Error notifications for managing
 # https://docs.djangoproject.com/en/1.11/ref/settings/#admins
@@ -396,3 +398,10 @@ LOGGING = {
         },
     },
 }
+
+BLOG_SETTINGS = {
+    'visitors': 0,
+}
+
+
+

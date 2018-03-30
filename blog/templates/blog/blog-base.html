@@ -55,12 +55,18 @@
                     </ul>
                 </div>
                 <!-- End Recent Posts -->
+
                 <!-- Visitor Counter -->
                 <div class="recent-posts">
                     <h3>Visitor</h3>
-                    <script type="text/javascript" src="//counter.websiteout.net/js/7/7/0/1"></script>
+                    <div data-theme="car" class="odometer odometer-theme-car">
+                        <div class="odometer-inside">
+                            {% for number in visitors %}<span  class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">{{ number }}</span></span></span></span></span>{% if forloop.counter|divisibleby:3 and not forloop.last%}<span class="odometer-formatting-mark">,</span>{% endif %}{% endfor %}
+                        </div>
+                    </div>
                 </div>
                 <!-- End Visitor Counter -->
+
             </div>
             <!-- End Side Column -->
         </div>

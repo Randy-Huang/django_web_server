@@ -23,8 +23,6 @@ from django.views.static import serve
 from django_web_server.views import TemplateErrorView404
 from oauth2client.contrib.django_util import site 
 
-from homepage import views
-
 import os 
 
 # project site root
@@ -33,8 +31,6 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^oauth2/', include(site.urls)),
-    url(r'^profile_required$', views.get_profile_required),
-    url(r'^profile_enabled$', views.get_profile_optional),
 ]
 
 # for ssl file from sslforfree.com

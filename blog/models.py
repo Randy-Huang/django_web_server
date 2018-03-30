@@ -50,7 +50,7 @@ class Article(models.Model):
     likes = models.PositiveIntegerField('Likes Counter', default=0)
 
     # Counter of views
-    #views = models.PositiveIntegerField('Views Counter', default=0)
+    views = models.PositiveIntegerField('Views Counter', default=0)
     
     # record to article crate and modify time
     created_time = models.DateTimeField(default=timezone.now)
